@@ -1,0 +1,25 @@
+
+<view class="block-collectList">
+  <view class="collect-item" wx:for="{{ list.data }}" wx:for-index="index" wx:key="this" catchtap="jumpView" data-field="{{item}}">
+    <view class="collect-item-l">
+      <image src="{{item.litpic}}"></image>
+    </view>
+    <view class="collect-item-m">
+      <view class="title">{{item.title}}</view>
+      <view class="time"><text class="iconfont icon-shijian"></text><text>{{item.add_time}}</text></view>
+    </view>
+    <view class="collect-item-r">
+      <view class="del-btn" catchtap="cancelCollect" data-aid="{{item.aid}}" data-index="{{index}}"><text class="iconfont icon-shanchu"></text></view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{ list.data.length > 0  && list.last_page == list.current_page }}" class="no-more f-30">亲, 没有更多了</view>
+<!-- 无数据提供的页面 -->
+<view wx:if="{{ !isLoading && !list.data.length }}">
+  <view class="ey-notcont">
+    <text class="iconfont icon-empty"></text>
+    <text class="cont">亲，您还没有收藏！</text>
+  </view>
+</view>
+
+<!--会员中心 end-->

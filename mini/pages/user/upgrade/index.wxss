@@ -1,0 +1,149 @@
+page, .container {
+  background: #fff;
+}
+
+.container {
+  padding-bottom: 70rpx;
+}
+
+/* 账户面板 */
+
+.account-panel {
+  width: 650rpx;
+  height: 180rpx;
+  margin: 50rpx auto;
+  padding: 0 60rpx;
+  box-sizing: border-box;
+  border-radius: 12rpx;
+  color: #fff;
+  background: linear-gradient(-125deg, #ff9111, #ff7600);
+  box-shadow: 0 5px 22px 0 rgba(0, 0, 0, 0.26);
+}
+
+.panel-lable {
+  font-size: 32rpx;
+}
+
+.upgrade-label {
+  color: rgb(51, 51, 51);
+  font-size: 28rpx;
+  margin-bottom: 25rpx;
+}
+
+.panel-balance {
+  text-align: right;
+  font-size: 46rpx;
+}
+
+.upgrade-panel {
+  margin-top: 60rpx;
+  padding: 0 60rpx;
+}
+
+/* 升级套餐 */
+
+.upgrade-plan .upgrade-plan_item {
+  width: 100%;
+  padding: 15rpx 0;
+  float: left;
+  text-align: center;
+  color: #888;
+  border: 1rpx solid rgb(228, 228, 228);
+  border-radius: 10rpx;
+  margin: 0 20rpx 50rpx 0;
+  position: relative;
+}
+
+.upgrade-plan .upgrade-plan_item:nth-child(3n+0) {
+  margin-right: 0;
+}
+
+.upgrade-plan .upgrade-plan_item.active {
+  color: #ff7600;
+  border: 1rpx solid #ff7600;
+}
+
+.upgrade-plan .upgrade-plan_item.active .plan_money {
+  color: #ff7600;
+}
+
+.plan_money {
+  font-size: 32rpx;
+  color: rgb(82, 82, 82);
+  margin-top: 10rpx;
+}
+.plan_activity{
+  background-color: #ff9111;
+  color: #fff;
+  padding: 0 20rpx;
+  display: block;
+  height: 48rpx;
+  line-height: 48rpx;
+  position: absolute;
+  right: 20rpx;
+  top: -30rpx;
+  font-size: 28rpx;
+  text-align: center;
+  border-top-right-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+}
+
+.plan_gift {
+  font-size: 25rpx;
+  margin-top: 20rpx;
+}
+.plan_gift .price{
+  color: #f00;
+}
+.upgrade-input {
+  margin-top: 25rpx;
+}
+
+.upgrade-order-label {
+  color: #888;
+  font-size: 28rpx;
+  margin: 25rpx 0rpx;
+  text-align: center;
+}
+
+/* 立即充值 */
+
+.upgrade-input input {
+  border: 1rpx solid rgb(228, 228, 228);
+  border-radius: 10rpx;
+  padding: 15rpx 16rpx;
+  font-size: 26rpx;
+}
+
+.upgrade-submit {
+  margin-top: 10rpx;
+}
+
+.btn-submit button {
+  font-size: 30rpx;
+  background: #ff9111;
+  border: none;
+  color: white;
+  border-radius: 50rpx;
+  padding: 0 120rpx;
+  line-height: 3;
+}
+
+.btn-submit button[disabled] {
+  background: #ff9111;
+  border-color: #ff9111;
+  color: white;
+}
+
+/* 充值说明 */
+
+.upgrade-describe {
+  margin-top: 50rpx;
+  padding: 0 60rpx;
+}
+
+.upgrade-describe .content {
+  font-size: 26rpx;
+  line-height: 1.6;
+  color: #888;
+}

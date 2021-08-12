@@ -1,0 +1,48 @@
+<view class="block-right-menu">
+  <!-- 默认 用法:<shortcut shortcutType="default"></shortcut> -->
+  <block wx:if="{{shortcutType == 'default'}}">
+    <view class="menu-item">
+      <button open-type="contact" size="27"
+        style="opacity: 0;position:absolute;"
+        bindcontact="handleContact"></button>
+      <text class="iconfont icon-kefu"></text>
+    </view>
+    <view bindtap="_onMakePhone" class="menu-item">
+      <text class="iconfont icon-shouji"></text>
+    </view>
+    <view bindtap="_onTargetPage" data-url="/pages/search/index" class="menu-item"><text
+        class="iconfont icon-sousuo"></text></view>
+    <view bindtap="_onToggleShow" class="menu-item on"><text
+        class="iconfont icon-huidaodingbu"></text></view>
+  </block>
+  <!-- 内页 带收藏 用法:<shortcut shortcutType="article" isCollect="{{isCollect}}" aid="{{aid}}"></shortcut> -->
+  <block wx:elif="{{shortcutType == 'article'}}">
+    <view class="menu-item">
+      <button open-type="contact" size="27"
+        style="opacity: 0;position:absolute;"
+        bindcontact="handleContact"></button>
+      <text class="iconfont icon-kefu"></text>
+    </view>
+    <view bindtap="_onCollect" class="menu-item">
+      <!-- 已收藏 -->
+      <text wx:if="{{isCollect == 1}}" class="iconfont icon-shoucanghou"></text>
+      <!-- 未收藏 -->
+      <text wx:elif="{{isCollect == 0}}" class="iconfont icon-wodeshoucang"></text>
+    </view>
+    <view bindtap="_onTargetPage" data-url="/pages/search/index" class="menu-item"><text
+        class="iconfont icon-sousuo"></text></view>
+    <view bindtap="_onToggleShow" class="menu-item on"><text
+        class="iconfont icon-huidaodingbu"></text></view>
+  </block>
+  <!-- 内页 带收藏 用法:<shortcut shortcutType="goTop"></shortcut> -->
+  <block wx:elif="{{shortcutType == 'goTop'}}">
+    <view bindtap="_onToggleShow" class="menu-item on"><text
+        class="iconfont icon-huidaodingbu"></text></view>
+  </block>
+  <!-- 分享按钮 用法:<shortcut shortcutType="share"></shortcut>-->
+  <block wx:elif="{{shortcutType == 'share'}}">
+    <button class="bottom-share" open-type='share'>
+      <view class="share-btn"><text class="text">分享</text></view>
+    </button>
+  </block>
+</view>

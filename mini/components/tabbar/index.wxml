@@ -1,0 +1,7 @@
+<cover-view class="tab-bar" wx:if="{{tabbar.list && tabbar.list.length > 0}}" style="background-color: {{tabbar.backgroundColor}}; border-color:{{tabbar.borderStyle}};">
+	<cover-view class="tab-bar-border"></cover-view>
+	<cover-view wx:for="{{tabbar.list}}" wx:key="index" class="tab-bar-item">
+		<cover-image class="cover-image" data-path="{{item.pagePath}}" catchtap="_switchTab" src="{{tabbar.selected >= 0 && tabbar.selected === index ? item.selectedIconPath : item.iconPath}}"></cover-image>
+		<cover-view class="cover-view" data-path="{{item.pagePath}}" catchtap="_switchTab" style="color: {{tabbar.selected >= 0 && tabbar.selected === index ? tabbar.selectedColor : tabbar.color}}">{{item.text}}</cover-view>
+	</cover-view>
+</cover-view>

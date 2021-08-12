@@ -1,0 +1,132 @@
+
+<import src="../../wxParse/wxParse.wxml"></import>
+<block wx:if="{{isApiLoaded}}">
+
+	<!-- 搜索框 start-->
+	<view class="index-search-box">
+		<navigator class="index-search" hover-class="none" openType="navigate" url="/pages/search/index">
+			<view class="index-cont-search t-c">
+				<icon class="text-center" color="rgba(0,0,0,0.4)" size="15" type="search"></icon>
+				<text>站内搜索</text>
+			</view>
+		</navigator>
+	</view>
+	<!--搜索框 end-->
+
+	<!--轮播图 start-->
+	<block wx:if="{{ adv_1.data }}">
+		<view class="block-swiper">
+			<view class="swiper-box">
+				<swiper indicator-color="rgb(255,255,255,0.8)" indicator-active-color="#999" indicator-dots="{{true}}" class='swipers' autoplay="true" current="{{currentSwiper}}">
+					<block wx:for="{{adv_1.data}}" wx:key="index">
+						<swiper-item>
+							<image class="swiper-image" src="{{item.litpic}}" lazy-load="true" catchtap="navigationTo" data-url="{{ item.url }}" />
+						</swiper-item>
+					</block>
+				</swiper>
+			</view>
+		</view>
+	</block>
+	<!--轮播图 end-->
+
+	<!--产品模块 start-->
+	<block wx:if="{{ arclist_1.data }}">
+		<view class="block-title">
+			<view class="title-box">
+				<view class="title-box-l"><text>推荐产品</text></view>
+				<view class="title-box-r" catchtap="jumpList" data-url="../archives/product/list"><text>更多</text><text class="iconfont icon-you"></text></view>
+			</view>
+		</view>
+		<view class="block-proList">
+			<view class="pro-item" wx:for="{{ arclist_1.data }}" wx:key="this" catchtap="jumpView" data-field="{{item}}">
+				<view class="img">
+					<image src="{{item.litpic}}"></image>
+				</view>
+				<view class="title">{{item.title}}</view>
+				<view class="price">￥{{item.users_price}}</view>
+			</view>
+		</view>
+	</block>
+	<!--产品模块 end-->
+
+	<!--新闻模块 start-->
+	<block wx:if="{{ arclist_2.data }}">
+		<view class="block-title mt20">
+			<view class="title-box">
+				<view class="title-box-l"><text>{{arclist_2.arctype.typename}}</text></view>
+				<view class="title-box-r" catchtap="jumpList" data-field="{{arclist_2.arctype}}"><text>更多</text><text class="iconfont icon-you"></text></view>
+			</view>
+		</view>
+		<view class="block-newsList">
+			<view class="news-item" wx:for="{{ arclist_2.data }}" wx:key="this" catchtap="jumpView" data-field="{{item}}">
+				<view class="news-item-l">
+					<image src="{{item.litpic}}"></image>
+				</view>
+				<view class="news-item-r">
+					<view class="title">{{item.title}}</view>
+					<view class="desc">{{item.seo_description}}</view>
+					<view class="time"><text class="iconfont icon-shijian"></text><text>{{item.add_time.Ymd}}</text></view>
+				</view>
+			</view>
+		</view>
+	</block>
+	<!--新闻模块 end-->
+
+	<!--案例模块 start-->
+	<block wx:if="{{ arclist_3.data }}">
+		<view class="block-title mt20">
+			<view class="title-box">
+				<view class="title-box-l"><text>{{arclist_3.arctype.typename}}</text></view>
+				<view class="title-box-r" catchtap="jumpList" data-field="{{arclist_3.arctype}}"><text>更多</text><text class="iconfont icon-you"></text></view>
+			</view>
+		</view>
+		<view class="block-proList">
+			<view class="pro-item" wx:for="{{ arclist_3.data }}" wx:key="this" catchtap="jumpView" data-field="{{item}}">
+				<view class="img">
+					<image src="{{item.litpic}}"></image>
+				</view>
+				<view class="title">{{item.title}}</view>
+			</view>
+		</view>
+	</block>
+	<!--案例模块 end-->
+
+	<!--关于我们 start-->
+	<block wx:if="{{ type_1.data }}">
+		<view class="block-title mt20">
+			<view class="title-box">
+				<view class="title-box-l"><text>{{type_1.data.typename}}</text></view>
+				<view class="title-box-r" catchtap="jumpList" data-field="{{type_1.data}}"><text>更多</text><text class="iconfont icon-you"></text></view>
+			</view>
+		</view>
+		<view class="block-about">
+			<template is="wxParse" data="{{ wxParseData:type_1_content.nodes }}"></template>
+		</view>
+	</block>
+	<!--关于我们 end-->
+
+	<!--联系我们 start-->
+	<view class="block-title mt20">
+		<view class="title-box">
+			<view class="title-box-l"><text>联系我们</text></view>
+		</view>
+	</view>
+	<view class="block-contact">
+		<view class="contact-item">
+			<view class="contact-item-l"><text class="iconfont icon-icon"></text></view>
+			<view class="contact-item-r">某某网络科技有限公司</view>
+		</view>
+		<view class="contact-item">
+			<view class="contact-item-l"><text class="iconfont icon-shouji"></text></view>
+			<view class="contact-item-r" bindtap="makePhoneCall" data-mobile="202-88888888">202-88888888</view>
+		</view>
+		<view class="contact-item">
+			<view class="contact-item-l"><text class="iconfont icon-dizhi"></text></view>
+			<view class="contact-item-r" bindtap="gomap" data-coordinate="29.381739,106.523697" data-address="重庆市巴南区解放街">重庆市巴南区解放街</view>
+		</view>
+	</view>
+	<!--联系我们 end-->
+</block>
+
+<!--这里是底部  -->
+<tabbar type='default'></tabbar>

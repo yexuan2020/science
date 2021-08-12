@@ -1,0 +1,189 @@
+
+page {
+  background-color: #f7f7f7;
+  padding-bottom: 100rpx;
+}
+
+/* 顶部选项卡 */
+
+.header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 88rpx;
+  color: #333;
+  font-size: 28rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #e4e4e4;
+  z-index: 100;
+  /* overflow: hidden; */
+  white-space: nowrap;
+}
+
+.header .cs {
+  display: inline-block;
+  padding: 0 20rpx;
+  text-align: center;
+  height: 84rpx;
+  line-height: 84rpx;
+  box-sizing: border-box;
+}
+
+.header .cs text {
+  display: block;
+  height: 100%;
+}
+
+.header .cs.active text {
+  color: #ff8200;
+  border-bottom: 2px solid #ff8200;
+}
+
+/* 分类下拉导航 */
+
+.navDrop {
+  position: relative;
+}
+
+.navDrop .hidden {
+  display: none;
+}
+
+.navDrop .navScroll {
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  white-space: nowrap;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 100rpx;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+}
+
+.navDrop .navItem {
+  display: inline-block;
+  width: auto;
+  text-align: center;
+  font-size: 28rpx;
+  color: #666;
+  margin-left: 20rpx;
+}
+
+.navDrop .navItem:last-child {
+  margin-right: 20rpx;
+}
+
+.navDrop .isRuleShow {
+  display: block;
+}
+
+.navDrop .isRuleHide {
+  display: none;
+}
+
+.navDrop .navBg {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  top: 100rpx;
+  left: 0;
+}
+
+.navDrop .navCon {
+  padding: 20rpx;
+  background-color: #fff;
+  white-space: normal;
+}
+
+.navDrop .navItem2 {
+  display: inline-block;
+  margin: 10rpx 20rpx 10rpx 10rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.navDrop .active,
+.navDrop .navItem2 .active {
+  color: #ff8200;
+}
+
+/*文档列表*/
+.list-body {
+  background: #ffffff;
+}
+
+.block-newsList {
+  margin-top: 108rpx;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  padding: 0 30rpx;
+  border-top: 1px solid #eee;
+}
+
+.block-newsList .news-item {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  padding: 30rpx 0;
+}
+
+.block-newsList .news-item .news-item-l {
+  width: 220rpx;
+  margin-right: 20rpx;
+}
+
+.block-newsList .news-item .news-item-l image {
+  width: 220rpx;
+  height: 180rpx;
+}
+
+.block-newsList .news-item .news-item-r {
+  width: 440rpx;
+}
+
+.block-newsList .news-item .news-item-r .title {
+  font-size: 34rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #333;
+}
+
+.block-newsList .news-item .news-item-r .desc {
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  color: #999;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.block-newsList .news-item .news-item-r .time {
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.block-newsList .news-item .news-item-r .time .iconfont {
+  font-size: 24rpx;
+  margin-right: 10rpx;
+}
+.block-newsList .news-item .news-item-r .time .price {
+  float: right;
+  color: #ff7600;
+  margin-right: 10rpx;
+}
+.block-newsList .news-item .news-item-r .time .line-price {
+  color: #999;
+  text-decoration: line-through;
+  margin-right: 10rpx;
+  float: right;
+}

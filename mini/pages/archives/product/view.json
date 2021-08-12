@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "shortcut": "/components/shortcut/shortcut"
+  }
+}

@@ -1,0 +1,43 @@
+<view class="container" wx:if="{{ userInfo.users_id }}">
+	<view class="account-panel dis-flex flex-y-center">
+		<view class="panel-lable">
+			<text>账户余额</text>
+		</view>
+		<view class="panel-balance flex-box">
+			<text>￥{{ userInfo.users_money }}</text>
+		</view>
+	</view>
+	<view class="recharge-panel">
+		<view class="recharge-label">
+			<text>充值金额</text>
+		</view>
+		<!-- 手动充值输入框 -->
+		<view class="recharge-input">
+			<input type="digit" placeholder="请输入充值金额" value="{{ inputValue }}" bindinput="bindMoneyInput" />
+		</view>
+		<!-- 确认按钮 -->
+		<view class="recharge-submit btn-submit" catchtap="onSubmit">
+			<button disabled="{{ disabled }}">立即充值</button>
+			<!-- <form bindsubmit="onSubmit" report-submit="true">
+				<button formType="submit" disabled="{{ disabled }}">立即充值</button>
+			</form> -->
+		</view>
+		<view class="recharge-order-label" catchtap="onTargetPath" data-url="pages/user/recharge/order/index">
+			<button class="btn-normal">查看明细</button>
+			<!-- <form bindsubmit="onSeeRechargeOrder" report-submit="true">
+				<button formType="submit" class="btn-normal">查看明细</button>
+			</form> -->
+		</view>
+	</view>
+	<!-- 充值描述 -->
+	<view class="recharge-describe">
+		<view class="recharge-label">
+			<text>充值说明</text>
+		</view>
+		<view class="content">
+			<text space="ensp">1. 仅限微信在线方式支付，充值金额实时到账；
+2. 账户余额有效期：自充值日起至用完即止；
+3. 若有其它疑问，可联系在线客服；</text>
+		</view>
+	</view>
+</view>

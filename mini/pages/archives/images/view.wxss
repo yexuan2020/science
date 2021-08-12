@@ -1,0 +1,68 @@
+
+/* wxParse.wxss */
+@import "/wxParse/wxParse.wxss";
+
+page {
+  /* padding-bottom: 100rpx; */
+  background-color: #f7f7f7;
+}
+
+/*幻灯片*/
+.block-swiper {
+  padding: 0rpx;
+}
+
+.block-swiper .swiper-box {
+  height: auto;
+  position: relative;
+}
+
+.block-swiper .swipers {
+  height: 500rpx;
+}
+
+.block-swiper .swiper-box image {
+  width: 100%;
+  height: 100%;
+}
+
+/*文档详情*/
+.block-detail {
+  padding: 0 30rpx;
+  background-color: #ffffff;
+}
+
+.block-detail .detail-header {
+  padding: 30rpx 0;
+  border-bottom: 1px solid #eee;
+}
+
+.block-detail .detail-header .title {
+  font-size: 36rpx;
+}
+
+.block-detail .detail-header .time {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.block-detail .detail-header .time .iconfont {
+  font-size: 28rpx;
+  margin-right: 10rpx;
+}
+
+.block-detail .detail-con {
+  padding: 30rpx 0;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.5;
+}
+
+.block-detail .detail-con text {
+  display: inline-block;
+}
+
+.block-detail .detail-con image {
+  max-width: 100%;
+}

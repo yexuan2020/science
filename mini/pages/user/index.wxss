@@ -1,0 +1,164 @@
+/* pages/me/me.wxss */
+page{
+  background-color: #f7f7f7;
+}
+/*会员中心*/
+.block-member{
+  background-color: #fff;
+  padding:0 30rpx;
+}
+.block-member .member-item{
+  display: flex;
+  align-items: center;
+  padding: 24rpx 0;
+  border-bottom: 1px solid #eee;
+  color: #666;
+  font-size:30rpx;
+}
+.block-member .member-item .member-item-l{
+  width: 50rpx;
+  margin-right: 10rpx;
+  text-align:center;
+}
+.block-member .member-item .member-item-l .iconfont{
+  font-size: 40rpx;
+  color: #999;
+}
+.block-member .member-item:last-child{
+  border-bottom: 0;
+}
+.block-member .member-item .member-item-m{
+  flex: 1;
+}
+.block-member .member-item .member-item-r{
+  display: flex;
+  align-items: center;
+}
+.block-member .member-item .member-item-r .img image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.block-member .member-item .member-item-r .price{
+  font-size: 32rpx;
+  color:#ff7600;
+}
+.block-member .member-item .member-item-r .iconfont{
+  color: #999;
+  font-size: 28rpx;
+  margin-left:10rpx;
+}
+.member-header{
+  display: flex;
+  align-items: center;
+  padding:30rpx;
+  width: 100%;
+  background: linear-gradient(#ff7600,#ff9111);
+}
+.member-header .member-header-l{
+  margin-right: 20rpx;
+}
+.member-header .member-header-l image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.member-header .member-header-m{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #fff;
+}
+.member-header .member-header-m .name{
+  font-size: 38rpx;
+  width: 100%;
+  display: inline-block;
+}
+.member-header .member-header-m .tel{
+  width: 100%;
+  display: inline-block;
+  font-size: 28rpx;
+  padding-top: 10rpx;
+}
+.member-header .member-header-r{
+  width: 100rpx;
+  color: #fff;
+  font-size: 26rpx;
+}
+
+.block-edit{
+  padding:0 30rpx;
+}
+
+.block-edit .edit-item{
+  padding: 30rpx 0;
+}
+.block-edit .edit-item input[type="text"]{
+  padding: 30rpx 0;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+
+.block-btn{
+  padding:0 30rpx;
+}
+
+.block-btn .submit{
+  text-align: center;
+  font-size: 32rpx;
+  border-radius: 50rpx;
+  color: #fff;
+  padding: 16rpx 0;
+  background: linear-gradient(to right,rgb(255,118,0), rgb(255,145,17));
+}
+
+.my-asset {
+  background: #fff;
+  padding: 26rpx 0;
+  margin: 20rpx 0rpx;
+}
+.flex-x-center {
+  justify-content: center;
+}
+
+.my-asset .asset-right {
+  width: 210rpx;
+  border-left: 1rpx solid #eee;
+}
+
+.asset-right_item {
+  text-align: center;
+  color: #666;
+}
+
+.asset-right_item .item-icon text {
+  font-size: 36rpx;
+}
+
+.asset-right_item .item-name {
+  margin-top: 10rpx;
+}
+
+.asset-right_item .item-name text {
+  font-size: 25rpx;
+}
+
+.asset-left_item {
+  text-align: center;
+  color: #666;
+  padding: 0 60rpx;
+}
+
+.asset-left_item .item-value text {
+  font-size: 32rpx;
+  color: red;
+}
+
+.asset-left_item .item-name {
+  margin-top: 6rpx;
+}
+
+.asset-left_item .item-name text {
+  font-size: 25rpx;
+}

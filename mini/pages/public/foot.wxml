@@ -1,0 +1,17 @@
+<!-- 底部菜单 -->
+<!-- <template name="tabbar">
+	<cover-view class="tab-bar" wx:if="{{tabbar.list && tabbar.list.length > 0}}" style="background-color: {{tabbar.backgroundColor}}; border-color:{{tabbar.borderStyle}};">
+		<cover-view class="tab-bar-border"></cover-view>
+		<cover-view wx:for="{{tabbar.list}}" wx:key="index" class="tab-bar-item">
+			<cover-image data-path="{{item.pagePath}}" catchtap="switchTab" src="{{tabbar.selected >= 0 && tabbar.selected === index ? item.selectedIconPath : item.iconPath}}"></cover-image>
+			<cover-view data-path="{{item.pagePath}}" catchtap="switchTab" style="color: {{tabbar.selected >= 0 && tabbar.selected === index ? tabbar.selectedColor : tabbar.color}}">{{item.text}}</cover-view>
+		</cover-view>
+	</cover-view>
+</template> -->
+
+<!-- 底部版权 -->
+<!-- <template name="copyright">
+	<view class="footer-copyright">
+		<text class="text">由易优CMS提供技术支持</text>
+	</view>
+</template> -->

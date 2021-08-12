@@ -1,0 +1,134 @@
+
+/* wxParse.wxss */
+@import "/wxParse/wxParse.wxss";
+
+page {
+  /* padding-bottom: 100rpx; */
+  background-color: #f7f7f7;
+}
+
+/*文档详情*/
+.block-detail {
+  padding: 0 30rpx;
+  background-color: #ffffff;
+}
+
+.block-detail .detail-header {
+  padding: 30rpx 0;
+  border-bottom: 1px solid #eee;
+}
+
+.block-detail .detail-header .title {
+  font-size: 36rpx;
+}
+
+.block-detail .detail-header .time {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.block-detail .detail-header .time .iconfont {
+  font-size: 28rpx;
+  margin-right: 10rpx;
+}
+
+.block-detail .detail-con {
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.5;
+}
+
+.block-detail .detail-con text {
+  display: inline-block;
+}
+
+.block-detail .detail-con image {
+  max-width: 100%;
+}
+
+/*上下篇*/
+.pagination {
+  background-color: #fff;
+  padding: 20rpx;
+  border-top: 1px solid #eee;
+}
+
+.nav-previous,
+.nav-next {
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 20rpx auto;
+  color: #999;
+  display: flex;
+}
+
+.nav-previous .previous-title,
+.nav-next .next-title {
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.nav-previous .previous-text,
+.nav-next .next-text {
+  width: 100rpx;
+}
+
+.footer-fixed {
+  width: 100%;
+  padding: 0rpx 0rpx 20rpx 0rpx;
+  font-size:28rpx;
+  background-color: #fff;
+}
+.footer-fixed .content-hide-tips {
+    padding: 20rpx 0rpx;
+    border: 1px dashed #ccc;
+    /* margin: 20px 0 40px; */
+    background-color: #f6f6f6;
+    border-radius: 4px;
+    position: relative;
+}
+
+.footer-fixed .btn-1 {
+  margin:0 auto;
+  width: 180rpx;
+  background: linear-gradient(to right, #FFC500 0, #FF9402 100%);
+  color: #fff;
+  text-align: center;
+  height: 52rpx;
+  line-height: 52rpx;
+  border-radius:50rpx;
+}
+
+.footer-fixed .text-vip {
+  margin:0 auto;
+  color: #FF7A00;
+  text-align: center;
+  padding-bottom: 18rpx;
+}
+
+.footer-fixed .text-hide-tips {
+  margin:0 auto;
+  color: #666;
+  text-align: center;
+  padding-bottom: 18rpx;
+}
+
+.footer-fixed .text-hide-tips .levelname {
+  color: #f00;
+}
+
+.footer-fixed .text-hide-tips .price {
+  color: #f00;
+}
+.footer-fixed .text-hide-tips .line-price {
+  color: #999;
+  text-decoration: line-through;
+  margin-left: 10rpx;
+}

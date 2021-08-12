@@ -1,0 +1,54 @@
+
+/* common.wxss */
+@import "/utils/common.wxss";
+@import "/static/css/common.wxss";
+
+/*底部更多*/
+.no-more {
+  text-align: center;
+  padding: 20rpx 0;
+  color: #999999;
+  overflow: hidden;
+}
+
+/* 底部版权 */
+.footer-copyright {
+  position: relative;
+  z-index: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  overflow: hidden;
+  color: #888;
+  text-align: center;
+  padding: 0rpx 18rpx;
+  background-color: #f7f7f7;
+}
+
+.footer-copyright .text {
+  padding: 0 12rpx;
+  font-size: 24rpx;
+  z-index: 10;
+  color: #999;
+}
+
+/*没有数据的情况*/
+.ey-notcont {
+  padding: 130rpx 100rpx;
+  box-sizing: border-box;
+}
+
+.ey-notcont .cont {
+  color: #999999;
+  margin-top: 10rpx;
+  display: block;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.ey-notcont .iconfont {
+  text-align: center;
+  font-size: 150rpx;
+  display: block;
+  margin-bottom: 12rpx;
+  color: #cccccc;
+}

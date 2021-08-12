@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/archives/article/list",
+    "pages/archives/article/view",
+    "pages/archives/product/list",
+    "pages/archives/product/view",
+    "pages/archives/images/list",
+    "pages/archives/images/view",
+    "pages/archives/custom/list",
+    "pages/archives/custom/view",
+    "pages/archives/media/list",
+    "pages/archives/media/view",
+    "pages/archives/single/view",
+    "pages/search/index",
+    "pages/search/list",
+    "pages/login/login",
+    "pages/user/index",
+    "pages/user/edit/index",
+    "pages/user/edit_name/index",
+    "pages/user/collect/index",
+    "pages/user/recharge/index",
+    "pages/user/recharge/order/index",
+    "pages/user/upgrade/index",
+    "pages/user/upgrade/order/index",
+    "pages/user/account/order/index",
+    "pages/user/order/articlepay/index",
+    "pages/user/order/mediapay/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "light"
+  },
+  "debug": false,
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于为您提供更合适您的服务"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

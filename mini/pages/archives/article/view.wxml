@@ -1,0 +1,60 @@
+<block wx:if="{{ detail.length == 0 }}">
+	<view class="ey-notcont" wx:if="{{ detail.length == 0 }}">
+		<text class="iconfont icon-empty"></text>
+		<text class="cont">亲，没有符合数据</text>
+	</view>
+</block>
+
+<!--内容模板-->
+<import src="../../../wxParse/wxParse.wxml"></import>
+<block wx:if="{{ detail.arcrank >= 0 }}">
+	<view class="block-detail">
+		<view class="detail-header">
+			<view class="title">{{ detail.title }}</view>
+			<view class="time"><text class="iconfont icon-shijian"></text><text>{{ detail.add_time }}</text></view>
+		</view>
+		<view class="detail-con">
+			<template is="wxParse" data="{{ wxParseData:content.nodes }}"></template>
+		</view>
+		<!-- 底部按钮 -->
+		<view class="footer-fixed" wx:if="{{detail.freeData.vipDisplay}}">
+			<view class="content-hide-tips">
+				<view class="text-vip" wx:if="{{detail.restric_type == 2}}">加入VIP 永久免费浏览</view>
+				<view class="text-hide-tips">
+					<block wx:if="{{detail.restric_type == 2}}">
+						本文隐藏内容需【<text class="levelname">{{detail.level_name}}</text>】才能查看
+					</block>
+					<block wx:elif="{{detail.restric_type == 3}}">
+						本文隐藏内容需【<text class="levelname">{{detail.level_name}}</text>】付费才能查看
+					</block>
+				</view>
+				<view class="text-hide-tips" wx:if="{{detail.restric_type == 3 && detail.freeData.is_pay == 1}}">已购买</view>
+				<view class="btn-1" catchtap="onSubmitLevel">立即升级</view>
+			</view>
+		</view>
+		<view class="footer-fixed" wx:if="{{detail.freeData.display}}">
+			<view class="content-hide-tips">
+				<view class="text-hide-tips">本文隐藏内容需支付</view>
+				<view class="text-hide-tips">
+					<text class="price">￥{{detail.users_price}}</text>
+					<text class="line-price" wx:if="{{detail.old_price > detail.users_price}}">￥{{ detail.old_price }}</text>
+				</view>
+				<view class="btn-1" catchtap="onSubmitFreePay">立即支付</view>
+			</view>
+		</view>
+	</view>
+	<!-- 上下一篇 -->
+	<view class="pagination" wx:if="{{preDetail.aid || nextDetail.aid}}">
+		<view wx:if="{{preDetail.aid}}" class="nav-previous">
+			<view class="previous-text">上一篇：</view>
+			<view class="previous-title" catchtap="jumpView" data-field="{{preDetail}}">{{preDetail.title}}</view>
+		</view>
+		<view wx:if="{{nextDetail.aid}}" class="nav-next">
+			<view class="next-text">下一篇：</view>
+			<view class="next-title" catchtap="jumpView" data-field="{{nextDetail}}">{{nextDetail.title}}</view>
+		</view>
+	</view>
+	<!-- 快捷导航 -->
+	<shortcut shortcutType="share"></shortcut>
+	<shortcut shortcutType="article" aid="{{detail.aid}}" isCollect="{{detail.isCollect}}"></shortcut>
+</block>

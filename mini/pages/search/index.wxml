@@ -1,0 +1,29 @@
+<view class="container">
+	<view class="cont-box">
+		<view class="dis-flex search-input-box">
+			<view class="search-input">
+				<view class="dis-flex search-box">
+					<view class="left">
+						<icon color="rgba(180,180,180,1)" size="15" type="search"></icon>
+					</view>
+					<view class="right">
+						<input bindinput="getSearchKeywords" class="input" focus="true" placeholder="请输入搜索的关键词" placeholderStyle="color:#cccccc" type="text"></input>
+					</view>
+				</view>
+			</view>
+			<view class="serch-button">
+				<button bindtap="searchSubmit" type="warn"> 搜索 </button>
+			</view>
+		</view>
+		<view class="search-cont-box" wx:if="{{historySearch.length}}">
+			<view class="title-box">最近搜索
+				<text bindtap="clearSearch" class="iconfont icon-shanchu col-7"></text>
+			</view>
+			<view class="sale-button-box">
+				<view class="seconds-kill-li" wx:for="{{historySearch}}" wx:key="this">
+					<view bindtap="jumpSearch" class="history-button" data-text="{{item}}">{{item}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

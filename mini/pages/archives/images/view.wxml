@@ -1,0 +1,39 @@
+
+<block wx:if="{{ detail.length == 0 }}">
+	<view class="ey-notcont" wx:if="{{ detail.length == 0 }}">
+		<text class="iconfont icon-empty"></text>
+		<text class="cont">亲，没有符合数据</text>
+	</view>
+</block>
+
+<!--内容模板-->
+<import src="../../../wxParse/wxParse.wxml"></import>
+<block wx:if="{{ detail.arcrank >= 0 }}">
+	<view class="block-detail">
+		<view class="detail-header">
+			<view class="title">{{ detail.title }}</view>
+			<view class="time"><text class="iconfont icon-shijian"></text><text>{{ detail.add_time }}</text></view>
+		</view>
+
+		<!--轮播图 start-->
+		<view class="block-swiper" wx:if="{{detail.image_list}}">
+			<view class="swiper-box">
+				<swiper indicator-color="rgb(255,255,255,0.8)" indicator-active-color="#999" indicator-dots="{{true}}"
+					class='swipers' current="{{currentSwiper}}">
+					<block wx:for="{{detail.image_list}}" wx:key="this" data-index="{{ index }}">
+						<swiper-item catchtap="onPreviewImages">
+							<image class="swiper-image" src="{{item.image_url}}" lazy-load="true" />
+						</swiper-item>
+					</block>
+				</swiper>
+			</view>
+		</view>
+		<!--轮播图 end-->
+
+		<view class="detail-con">
+			<template is="wxParse" data="{{ wxParseData:content.nodes }}"></template>
+		</view>
+	</view>
+	<!-- 快捷导航 -->
+	<shortcut shortcutType="share"></shortcut>
+</block>

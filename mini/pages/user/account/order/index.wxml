@@ -1,0 +1,31 @@
+<view class="container">
+  <view class="account-order">
+    <!-- <scroll-view bindscrolltolower="bindDownLoad" scroll-y style="height: {{ scrollHeight }}px"> -->
+      <view wx:for="{{ list.data }}" wx:key="this" class="order-item dis-flex flex-x-between flex-y-center">
+        <view class="item-left">
+          <view class="rec-status">
+            <text>{{ item.cause_type.text }}</text>
+          </view>
+          <view class="rec-time">
+            <text>{{ item.add_time }}</text>
+          </view>
+        </view>
+        <view class="item-right">
+          <view class="rec-status">
+          <text>{{ item.money }}元</text>
+          </view>
+          <view class="rec-time">
+          <text>{{ item.status.text }}</text>
+          </view>
+        </view>
+      </view>
+      <!-- 无数据提供的页面 -->
+      <view wx:if="{{ !list.data.length && !isLoading }}">
+        <view class="ey-notcont">
+          <text class="iconfont icon-empty"></text>
+          <text class="cont">亲，没有符合数据</text>
+        </view>
+      </view>
+    <!-- </scroll-view> -->
+  </view>
+</view>

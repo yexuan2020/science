@@ -1,0 +1,50 @@
+@import  "/static/css/iconfont.wxss";
+/*右浮动菜单*/
+.block-right-menu{
+  position: fixed;
+  bottom: 200rpx;
+  right: 20rpx;
+  z-index: 999;
+}
+.block-right-menu .menu-item{
+  background-color: #ffffff;
+  width: 72rpx;
+  height:72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius:50%;
+  margin-bottom: 10rpx;
+  box-shadow: 0 2px 6px -1px #ddd;
+}
+.block-right-menu .menu-item.on{
+  background-color: #ff7600;
+}
+.block-right-menu .menu-item.on .iconfont{
+  color: #fff;
+  
+}
+.block-right-menu .menu-item .iconfont{
+  font-size: 36rpx;
+  color: #ff7600;
+}
+/*分享按钮*/
+.share-btn{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  top: 15%;
+  right: 0;
+  background: linear-gradient(to right, rgb(255, 118, 0), rgb(255, 145, 17));
+  color: #fff;
+  width: 72rpx;
+  height:52rpx;
+  border-radius: 50rpx 0 0 50rpx;
+}
+.share-btn .text{
+  color: #ffffff;
+  font-size: 24rpx
+}
+

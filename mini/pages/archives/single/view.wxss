@@ -1,0 +1,29 @@
+
+/* wxParse.wxss */
+@import "/wxParse/wxParse.wxss";
+
+page {
+  /* padding-bottom: 100rpx; */
+  background-color: #f7f7f7;
+}
+
+/*文档详情*/
+.block-detail {
+  padding: 0 30rpx;
+  background-color: #ffffff;
+}
+
+.block-detail .detail-con {
+  padding: 30rpx 0;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.5;
+}
+
+.block-detail .detail-con text {
+  display: inline-block;
+}
+
+.block-detail .detail-con image {
+  max-width: 100%;
+}

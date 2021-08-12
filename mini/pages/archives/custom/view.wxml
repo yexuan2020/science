@@ -1,0 +1,35 @@
+
+<block wx:if="{{ detail.length == 0 }}">
+	<view class="ey-notcont" wx:if="{{ detail.length == 0 }}">
+		<text class="iconfont icon-empty"></text>
+		<text class="cont">亲，没有符合数据</text>
+	</view>
+</block>
+
+<!--内容模板-->
+<import src="../../../wxParse/wxParse.wxml"></import>
+<block wx:if="{{ detail.arcrank >= 0 }}">
+	<view class="block-detail">
+		<view class="detail-header">
+			<view class="title">{{ detail.title }}</view>
+			<view class="time"><text class="iconfont icon-shijian"></text><text>{{ detail.add_time }}</text></view>
+		</view>
+		<view class="detail-con">
+			<template is="wxParse" data="{{ wxParseData:content.nodes }}"></template>
+		</view>
+	</view>
+	<!-- 上下一篇 -->
+	<view class="pagination" wx:if="{{preDetail.aid || nextDetail.aid}}">
+		<view wx:if="{{preDetail.aid}}" class="nav-previous">
+			<view class="previous-text">上一篇：</view>
+			<view class="previous-title" catchtap="jumpView" data-field="{{preDetail}}">{{preDetail.title}}</view>
+		</view>
+		<view wx:if="{{nextDetail.aid}}" class="nav-next">
+			<view class="next-text">下一篇：</view>
+			<view class="next-title" catchtap="jumpView" data-field="{{nextDetail}}">{{nextDetail.title}}</view>
+		</view>
+	</view>
+	<!-- 快捷导航 -->
+	<shortcut shortcutType="share"></shortcut>
+	<shortcut shortcutType="article" aid="{{detail.aid}}" isCollect="{{detail.isCollect}}"></shortcut>
+</block>

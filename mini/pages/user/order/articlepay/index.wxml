@@ -1,0 +1,66 @@
+<view class="container">
+	<!-- tab栏 -->
+	<view class="header f-28 col-3">
+		<view catchtap="onTargetPath" data-url="pages/user/order/articlepay/index" class="active">
+			<text>已购文章</text>
+		</view>
+		<view catchtap="onTargetPath" data-url="pages/user/order/mediapay/index">
+			<text>已购视频</text>
+		</view>
+	</view>
+	<!-- 订单列表 -->
+	<view class="goods-detail-box">
+		<scroll-view bindscrolltolower="bindDownLoad" scroll-y style="height: {{scrollHeight}}px; width: 750rpx;margin-top:88rpx;">
+			<view class="wrapper" wx:if="{{list.data.length > 0}}">
+				<!-- <view wx:if="{{list.length}}"> -->
+				<view class="m-top20" wx:for="{{list.data}}" wx:key="this" catchtap="onViewPath" data-id="{{item.product_id}}">
+					<view class="order-box b-f">
+						<view class="order-cont dis-flex">
+							<view class="order-num">
+								<text>订单号：{{item.order_code}}</text>
+							</view>
+							<view class="order-time">
+								<text>{{item.order_status.text}}</text>
+							</view>
+						</view>
+					</view>
+					<view class="order-box order-img_list">
+						<view class="order-shop">
+							<view class="order-list-box dis-flex">
+								<view class="left" wx:if="{{item.product_litpic}}">
+									<view class="dis-flex">
+										<view class="order-shop-left">
+											<image src="{{item.product_litpic}}"></image>
+										</view>
+									</view>
+								</view>
+								<view class="right dis-flex flex-x-center flex-y-center">
+									<text class="goods-number">{{item.product_name}}</text>
+									<text class="iconfont icon-xiangyoujiantou user-orderJtou"></text>
+								</view>
+							</view>
+						</view>
+					</view>
+					<view class="order-box b-f">
+						<view class="order-header dis-flex">
+							<view class="flex-box t-l">
+								<text class="time"><text class="iconfont icon-shijian"></text>{{item.add_time}}</text>
+							</view>
+							<view class="flex-box t-r">
+								<text class="cont">￥{{item.order_amount}}</text>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view wx:if="{{ no_more }}" class="no-more f-30">亲, 没有更多了</view>
+      <!-- 无数据提供的页面 -->
+      <view wx:if="{{ !isLoading && !list.data.length }}">
+        <view class="ey-notcont">
+          <text class="iconfont icon-empty"></text>
+          <text class="cont">亲，没有符合数据</text>
+        </view>
+      </view>
+		</scroll-view>
+	</view>
+</view>

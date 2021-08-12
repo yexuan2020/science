@@ -1,0 +1,81 @@
+
+/* wxParse.wxss */
+@import "/wxParse/wxParse.wxss";
+
+page {
+  /* padding-bottom: 100rpx; */
+  background-color: #f7f7f7;
+}
+
+/*文档详情*/
+.block-detail {
+  padding: 0 30rpx;
+  background-color: #ffffff;
+}
+
+.block-detail .detail-header {
+  padding: 30rpx 0;
+  border-bottom: 1px solid #eee;
+}
+
+.block-detail .detail-header .title {
+  font-size: 36rpx;
+}
+
+.block-detail .detail-header .time {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.block-detail .detail-header .time .iconfont {
+  font-size: 28rpx;
+  margin-right: 10rpx;
+}
+
+.block-detail .detail-con {
+  padding: 30rpx 0;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.5;
+}
+
+.block-detail .detail-con text {
+  display: inline-block;
+}
+
+.block-detail .detail-con image {
+  max-width: 100%;
+}
+
+/*上下篇*/
+.pagination {
+  background-color: #fff;
+  padding: 20rpx;
+  border-top: 1px solid #eee;
+}
+
+.nav-previous,
+.nav-next {
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 20rpx auto;
+  color: #999;
+  display: flex;
+}
+
+.nav-previous .previous-title,
+.nav-next .next-title {
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.nav-previous .previous-text,
+.nav-next .next-text {
+  width: 100rpx;
+}

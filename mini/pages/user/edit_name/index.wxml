@@ -1,0 +1,10 @@
+<!--pages/me/me_edit_name.wxml-->
+<view class="block-edit">
+  <view class="edit-item">
+    <input type="text" value="{{nickname}}" bindinput="bindNickname" />
+  </view>
+</view>
+
+<view class="block-btn">
+  <view class="submit" bindtap="save">保存</view>
+</view>

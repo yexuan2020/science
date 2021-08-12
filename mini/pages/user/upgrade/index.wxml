@@ -1,0 +1,55 @@
+<view class="container" wx:if="{{ userInfo.users_id }}">
+  <view class="account-panel dis-flex flex-y-center">
+    <view class="panel-lable">
+      <text>当前级别</text>
+    </view>
+    <view class="panel-balance flex-box">
+      <text>{{ userInfo.level_name }}</text>
+    </view>
+  </view>
+  <view class="upgrade-panel">
+    <view class="upgrade-label">
+      <text>VIP套餐</text>
+    </view>
+    <view class="upgrade-plan clear">
+      <block wx:for="{{ list }}" wx:key="this">
+        <view class="upgrade-plan_item {{ selectedTypeId == item.type_id ? 'active' : '' }}" catchtap="onSelectUpgrade" data-id="{{ item.type_id }}" data-level_value="{{ item.level_value }}" data-price="{{ item.price }}">
+          <view class="plan_money">
+            <text>{{ item.type_name }}</text>
+            <view class="plan_activity" wx:if="{{item.activity}}">{{item.activity}}</view>
+          </view>
+
+          <view class="plan_gift">
+            <text class="price">{{ item.price }}元</text>
+            <text> / {{item.limit_id.text}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+    <!-- 确认按钮 -->
+    <view class="upgrade-submit btn-submit" catchtap="onSubmit">
+      <button disabled="{{ disabled }}">立即支付</button>
+      <!-- <form bindsubmit="onSubmit" report-submit="true">
+        <button formType="submit" disabled="{{ disabled }}">立即支付</button>
+      </form> -->
+    </view>
+		<view class="upgrade-order-label" catchtap="onTargetPath" data-url="pages/user/upgrade/order/index">
+			<button class="btn-normal">查看明细</button>
+			<!-- <form bindsubmit="onSeeRechargeOrder" report-submit="true">
+				<button formType="submit" class="btn-normal">查看明细</button>
+			</form> -->
+		</view>
+  </view>
+  <!-- 升级描述 -->
+  <view class="upgrade-describe">
+    <view class="upgrade-label">
+      <text>服务声明</text>
+    </view>
+    <view class="content">
+      <text space="ensp">1、会员服务为虚拟产品，购买后不支持退款。
+2、在会员有效期内，可以免费阅读VIP对应级别文档。
+3、重复购买会员服务，有效期将在原有基础上顺延。
+4、禁止用户使用任何方式，利用本站资源，为他人提供有偿服务，一经发现，本站有权查封该账号，并追究法律责任。</text>
+    </view>
+  </view>
+</view>

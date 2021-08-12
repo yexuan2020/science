@@ -1,0 +1,62 @@
+.block-collectList{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  padding: 0 30rpx;
+  border-top: 1px solid #eee;
+}
+.block-collectList .collect-item{
+  display: flex;
+  border-bottom: 1px solid #eee;
+  padding: 30rpx 0;
+  align-items: center;
+}
+
+.block-collectList .collect-item:last-child{
+  border-bottom: 0;
+}
+.block-collectList .collect-item .collect-item-l{
+  width:140rpx;
+  margin-right: 20rpx;
+}
+.block-collectList .collect-item .collect-item-l image{
+  width:140rpx;
+  height:100rpx;
+}
+.block-collectList .collect-item .collect-item-m{
+  width: 460rpx;
+}
+.block-collectList .collect-item .collect-item-m .title{
+  font-size: 32rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #333;
+}
+
+.block-collectList .collect-item .collect-item-m .time{
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.block-collectList .collect-item .collect-item-m .time .iconfont{
+  font-size: 24rpx;
+  margin-right: 10rpx;
+}
+.block-collectList .collect-item .collect-item-r .del-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:#ff7600;
+  width: 60rpx;
+  height: 60rpx;
+  color: #fff;
+  border-radius: 50rpx;
+}
+.block-collectList .collect-item .collect-item-r{
+  margin-left: 10rpx;
+
+}
+.block-collectList .collect-item .collect-item-r .del-btn .iconfont{
+  font-size: 36rpx;
+}

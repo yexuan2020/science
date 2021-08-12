@@ -1,0 +1,15 @@
+<!--会员中心 start-->
+<view class="block-member">
+  <view class="member-item" bindtap="chooseImage">
+    <view class="member-item-m">头像</view>
+      <view class="member-item-r"> 
+      <view class="img"><image src="{{head_pic}}"></image></view>
+      <text class="iconfont icon-you"></text>
+    </view>
+  </view>
+  <navigator url="/pages/user/edit_name/index?nickname={{nickname}}" class="member-item">
+    <view class="member-item-m">名称</view>
+    <view class="member-item-r"> <text>{{nickname}}</text> <text class="iconfont icon-you"></text></view>
+  </navigator>
+</view>
+<!--会员中心 end-->

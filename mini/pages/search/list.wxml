@@ -1,0 +1,37 @@
+  <!-- 搜索框 -->
+  <view class="index-search-box">
+  	<navigator class="index-search" hover-class="none" openType="navigate" url="../search/index">
+  		<view class="index-cont-search t-c">
+  			<icon class="text-center" color="rgba(0,0,0,0.4)" size="15" type="search"></icon>
+  			<text>站内搜索</text>
+  		</view>
+  	</navigator>
+  </view>
+
+  <!--文档列表 start-->
+  <view wx:if="{{archivesList.data}}">
+  	<view class="block-newsList">
+  		<view class="news-item" wx:for="{{ archivesList.data }}" wx:key="this" catchtap="jumpView" data-field="{{item}}">
+  			<view class="news-item-l">
+  				<image src="{{item.litpic}}"></image>
+  			</view>
+  			<view class="news-item-r">
+  				<view class="title">{{item.title}}</view>
+  				<view class="desc">{{item.seo_description}}</view>
+  				<view class="time"><text class="iconfont icon-shijian"></text><text>{{item.add_time}}</text></view>
+  			</view>
+  		</view>
+  	</view>
+  	<view wx:if="{{ no_more }}" class="no-more f-30">亲, 没有更多了</view>
+  	<!-- 无数据提供的页面 -->
+  	<view wx:if="{{ !isLoading && !archivesList.data.length }}">
+  		<view class="ey-notcont">
+  			<text class="iconfont icon-empty"></text>
+  			<text class="cont">亲，没有符合数据</text>
+  		</view>
+  	</view>
+  </view>
+  <!--文档列表 end-->
+
+<!--这里是底部  -->
+<tabbar type='default'></tabbar>

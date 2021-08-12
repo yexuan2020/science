@@ -1,0 +1,141 @@
+
+<block wx:if="{{ detail.length == 0 }}">
+	<view class="ey-notcont" wx:if="{{ detail.length == 0 }}">
+		<text class="iconfont icon-empty"></text>
+		<text class="cont">亲，没有符合数据</text>
+	</view>
+</block>
+
+<!--内容模板-->
+<import src="../../../wxParse/wxParse.wxml"></import>
+<block wx:if="{{ detail.arcrank >= 0 }}">
+	<!--轮播图 start-->
+	<view class="block-swiper">
+		<view class="swiper-box">
+			<swiper indicator-color="rgb(255,255,255,0.8)" indicator-active-color="#999" indicator-dots="{{true}}"
+				class='swipers' current="{{currentSwiper}}">
+				<block wx:for="{{detail.image_list}}" wx:key="this" catchtap="onPreviewImages" data-index="{{ index }}">
+					<swiper-item catchtap="onPreviewImages">
+						<image class="swiper-image" src="{{item.image_url}}" lazy-load="true" />
+					</swiper-item>
+				</block>
+			</swiper>
+		</view>
+	</view>
+	<!--轮播图 end-->
+
+	<view class="block-produce">
+		<view class="produce-header">
+			<view class="title">{{detail.title}}</view>
+			<view class="price"><text>￥</text>{{ detail.users_price }}</view>
+		</view>
+
+		<!--切换导航-->
+		<view class="tab-nav">
+			<scroll-view class="tab-nav-con" scroll-x scroll-left="{{tabScroll}}" scroll-with-animation="true">
+				<view class="tab-item {{currentTab == 0 ? 'active' : ''}}" data-current="0" bindtap="clickTab">
+					<view class="text">课程介绍</view>
+				</view>
+				<view class="tab-item {{currentTab == 1 ? 'active' : ''}}" data-current="1" bindtap="clickTab"
+					wx:if="{{detail.attr_list.length > 0}}">
+					<view class="text">视频选集</view>
+				</view>
+				<view class="tab-item {{currentTab == 2 ? 'active' : ''}}" data-current="2" bindtap="clickTab"
+					wx:if="{{detail.customField.length > 0}}">
+					<view class="text">本课素材</view>
+				</view>
+			</scroll-view>
+		</view>
+		<!--切换导航 end-->
+		<!--产品内容 start-->
+		<view class="produce-con">
+			<view class="{{0==currentTab?'cur':''}}">
+				<block wx:if="{{detail.content!=''}}">
+					<view class="detail-con">
+						<template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
+					</view>
+				</block>
+				<block wx:else>
+					<view class="ey-notcont">
+						<text class="iconfont icon-empty"></text>
+						<text class="cont">亲，没有符合数据</text>
+					</view>
+				</block>
+			</view>
+			<view class="{{1==currentTab?'cur':''}}">
+				<view class="detail-con">
+					<view class="spec-item" wx:for="{{detail.attr_list}}" wx:key="this">
+						<view class="spec-item-l">{{item.attr_name}}</view>
+						<view class="spec-item-r">{{item.attr_value}}</view>
+					</view>
+				</view>
+			</view>
+			<view class="{{2==currentTab?'cur':''}}">
+				<view class="detail-con">
+					<view class="other-item" wx:for="{{detail.customField}}" wx:key="this">
+						<view class="other-item-l">{{ item.title }}</view>
+						<view class="other-item-r">
+							<template wx:if="{{ item.dtype == 'htmltext'}}" is="wxParse"
+								data="{{ wxParseData:item.value }}"></template>
+							<video wx:elif="{{ item.dtype == 'media' }}" src="{{ item.value }}" autoplay controls></video>
+							<view wx:elif="{{ item.dtype == 'imgs' }}">
+								<image wx:for="{{item.value}}" wx:key="index" wx:for-item="item2" src="{{ item2.image_url }}"></image>
+							</view>
+							<image wx:elif="{{ item.dtype == 'img' }}" src="{{ item.value }}"></image>
+							<text wx:else>{{ item.value }}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!--产品内容 end-->
+	</view>
+
+	<!--我要订购 start-->
+	<!-- <view class="block-footer-btn">
+		<button class="btn on" open-type="contact" type="default-light" show-message-card="true" send-message-title="{{detail.title}}" send-message-path="/pages/archives/media/view?aid={{detail.aid}}&typeid={{detail.typeid}}" send-message-img="{{detail.litpic}}">立即购买</button>
+	</view> -->
+	<!--我要订购 end-->
+
+	<!-- 快捷导航 -->
+	<shortcut shortcutType="share"></shortcut>
+	<shortcut shortcutType="goTop"></shortcut>
+
+	<!--产品底部 start-->
+	<view class="block-footerOper">
+		<view class="footerOper-l">
+			<view class="item" catchtap="goHome">
+				<view class="item-t">
+					<text class="iconfont icon-shouye"></text>
+				</view>
+				<view class="item-b">首页</view>
+			</view>
+			<view class="item" style="position: relative;">
+				<button open-type="contact" size="27" style="opacity: 0;position:absolute;top:0px;left:0px;display:block;width:100%;height:100%;" type="default-light" show-message-card="true" send-message-title="{{detail.title}}" send-message-path="/pages/archives/media/view?aid={{detail.aid}}" send-message-img="{{detail.litpic}}"></button>
+				<view class="item-t">
+					<text class="iconfont icon-kefu"></text>
+				</view>
+				<view class="item-b">客服</view>
+			</view>
+			<view class="item" catchtap="collect">
+				<view class="item-t cur" wx:if="{{isCollect == 1}}">
+					<text class="iconfont icon-shoucanghou"></text>
+				</view>
+				<view class="item-t" wx:elif="{{isCollect == 0}}">
+					<text class="iconfont icon-wodeshoucang"></text>
+				</view>
+				<view class="item-b">收藏</view>
+			</view>
+		</view>
+		<view class="footerOper-m">
+			<view class="price"><text>￥</text>{{ detail.users_price }}</view>
+		</view>
+		<view class="footerOper-r">
+			<button class="btn" open-type="contact" type="default-light" show-message-card="true"
+				send-message-title="{{detail.title}}"
+				send-message-path="/pages/archives/media/view?aid={{detail.aid}}&typeid={{detail.typeid}}"
+				send-message-img="{{detail.litpic}}">立即购买</button>
+		</view>
+	</view>
+	<!--产品底部 end-->
+</block>

@@ -1,0 +1,61 @@
+<!-- 分类tab -->
+<view class="header" wx:if="{{channelList.length > 0}}">
+	<scroll-view scroll-x scroll-left style="height: 100%;">
+		<view class="cs {{  item.currentstyle }}" catchtap="onSwitchTab" wx:for="{{ channelList }}" wx:key="this"
+			data-id="{{ item.id }}">
+			<text>{{ item.typename }}</text>
+		</view>
+	</scroll-view>
+
+	<!-- 导航下拉模式 -->
+	<!-- <view class="navDrop">
+		<scroll-view class="navScroll" scroll-x scroll-left="{{navScroll}}" scroll-with-animation="true">
+			<block wx:for="{{ channelList[0]['children'] ? channelList[0]['children'] : channelList }}" wx:key="index">
+				<view class="navItem {{currentNav == item.id ? 'active' : ''}}" data-current="{{item.id}}" bindtap="dropMeun" data-num="{{index+1}}" data-sub_level="{{ item.sub_level }}" data-channel="{{ item.current_channel }}" data-typeid="{{ item.id }}" data-field="{{item}}">{{item.typename}}</view>
+			</block>
+		</scroll-view>
+		<view class="navBg {{isRuleTrue?'isRuleShow':'isRuleHide'}}" bindtap="inbtn">
+			<block wx:for="{{ channelList[0]['children'] ? channelList[0]['children'] : channelList }}" wx:key="index">
+				<view class="navCon {{uhide==index+1?'':'hidden'}}">
+					<block wx:for="{{item.children}}" wx:key="index" wx:for-item="sitem">
+						<view bindtap="onTargetList" class="navItem2 {{subCurrentNav == sitem.id ? 'active' : ''}}" data-channel="{{ sitem.current_channel }}" data-is_all="{{item.id == sitem.id ? 1 : 0}}" data-current="{{ sitem.id }}" data-typeid="{{ sitem.id }}" data-parent_id="{{ sitem.parent_id }}" data-field="{{item}}">{{sitem.typename}}</view>
+					</block>
+				</view>
+			</block>
+		</view>
+	</view> -->
+	<!-- end -->
+</view>
+
+<!--文档列表 start-->
+<view class="list-body" wx:if="{{archivesList.data}}">
+	<view class="block-newsList">
+		<view class="news-item" wx:for="{{ archivesList.data }}" wx:key="this" catchtap="jumpView" data-field="{{item}}">
+			<view class="news-item-l">
+				<image src="{{item.litpic}}"></image>
+			</view>
+			<view class="news-item-r">
+				<view class="title">{{item.title}}</view>
+				<view class="desc">{{item.seo_description}}</view>
+				<view class="time">
+					<text class="iconfont icon-shijian"></text><text>{{item.add_time.Ymd}}</text>
+					<!-- <text class="line-price" wx:if="{{item.old_price > item.users_price}}">￥{{ item.old_price }}</text> -->
+					<text class="price" wx:if="{{item.users_price > 0}}">￥{{item.users_price}}</text>
+					<text class="price" wx:else>免费</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view wx:if="{{ no_more }}" class="no-more f-30">亲, 没有更多了</view>
+	<!-- 无数据提供的页面 -->
+	<view wx:if="{{ !isLoading && !archivesList.data.length }}">
+		<view class="ey-notcont">
+			<text class="iconfont icon-empty"></text>
+			<text class="cont">亲，没有符合数据</text>
+		</view>
+	</view>
+</view>
+<!--文档列表 end-->
+
+<!--这里是底部  -->
+<tabbar type='default'></tabbar>

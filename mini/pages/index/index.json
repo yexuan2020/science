@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "tabbar": "/components/tabbar/index",
+    "shortcut": "/components/shortcut/shortcut"
+  }
+}

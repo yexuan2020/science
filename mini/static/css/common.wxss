@@ -1,0 +1,175 @@
+/* iconfont */
+@import "/static/css/iconfont.wxss";
+
+.t-l {
+  text-align: left;
+}
+
+.t-c {
+  text-align: center;
+}
+
+.t-r {
+  text-align: right;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clear::after {
+  clear: both;
+  content: " ";
+  display: table;
+}
+
+.f-40 {
+  font-size: 40rpx;
+}
+
+.f-36 {
+  font-size: 36rpx;
+}
+
+.f-34 {
+  font-size: 34rpx;
+}
+
+.f-32 {
+  font-size: 32rpx;
+}
+
+.f-31 {
+  font-size: 31rpx;
+}
+
+.f-30 {
+  font-size: 30rpx;
+}
+
+.f-29 {
+  font-size: 29rpx;
+}
+
+.f-28 {
+  font-size: 28rpx;
+}
+
+.f-26 {
+  font-size: 26rpx;
+}
+
+.f-25 {
+  font-size: 25rpx;
+}
+
+.f-24 {
+  font-size: 24rpx;
+}
+
+.f-22 {
+  font-size: 22rpx;
+}
+
+.f-w {
+  font-weight: 700;
+}
+
+.f-n {
+  font-weight: 400;
+}
+
+.dis-block {
+  display: block;
+}
+
+.dis-flex {
+  display: flex !important;
+  /* flex-wrap: wrap; */
+}
+
+.flex-box {
+  flex: 1;
+}
+
+.flex-dir-row {
+  flex-direction: row;
+}
+
+.flex-dir-column {
+  flex-direction: column;
+}
+
+.flex-x-center {
+  /* display: flex; */
+  justify-content: center;
+}
+
+.flex-x-between {
+  justify-content: space-between;
+}
+
+.flex-x-around {
+  justify-content: space-around;
+}
+
+.flex-x-end {
+  justify-content: flex-end;
+}
+
+.flex-y-center {
+  align-items: center;
+}
+
+.flex-y-end {
+  align-items: flex-end;
+}
+
+.flex-five {
+  box-sizing: border-box;
+  flex: 0 0 50%;
+}
+
+.flex-three {
+  float: left;
+  width: 33.3%;
+}
+
+.flex-four {
+  box-sizing: border-box;
+  flex: 0 0 25%;
+}
+
+/* 无样式button (用于伪submit) */
+
+.btn-normal {
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  font-size: unset;
+  text-align: unset;
+  overflow: visible;
+  color: inherit;
+}
+
+.btn-normal:after {
+  border: none;
+}
+
+.btn-normal.button-hover {
+  color: inherit;
+}
+
+button:after {
+  content: none;
+  border: none;
+}

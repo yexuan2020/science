@@ -1,0 +1,256 @@
+
+/* wxParse.wxss */
+@import "/wxParse/wxParse.wxss";
+
+page {
+  padding-bottom: 96rpx;
+}
+
+/*幻灯片*/
+.block-swiper {
+  padding: 0rpx;
+}
+
+.block-swiper .swiper-box {
+  height: auto;
+  position: relative;
+}
+
+.block-swiper .swipers {
+  height: 500rpx;
+}
+
+.block-swiper .swiper-box image {
+  width: 100%;
+  height: 100%;
+}
+
+/*文档详情*/
+.block-produce {
+  position: relative;
+}
+
+.block-produce .produce-header {
+  padding: 30rpx;
+  border-bottom: 10rpx solid #f7f7f7;
+}
+
+.block-produce .produce-header .title {
+  font-size: 36rpx;
+  color: #333;
+}
+
+.block-produce .produce-header .price {
+  font-size: 36rpx;
+  color: #ff7600;
+}
+
+.block-produce .produce-header .price text {
+  font-size: 30rpx;
+}
+
+.block-produce .tab-nav {
+  width: 100%;
+  height: 92rpx;
+  white-space: nowrap;
+  line-height: 92rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.block-produce .tab-nav-con {
+  width: 96%;
+  margin: 0 auto;
+}
+
+.block-produce .tab-item {
+  position: relative;
+  display: inline-block;
+  padding: 0 10rpx;
+  height: 86rpx;
+  line-height: 86rpx;
+  text-align: center;
+  margin-right: 15rpx;
+}
+
+.block-produce .tab-item .text {
+  font-size: 30rpx;
+  color: #666;
+}
+
+.block-produce .tab-nav .tab-item.active {
+  border-bottom: 2px solid #ff7600;
+}
+
+.block-produce .tab-nav .active .text {
+  color: #ff7600;
+}
+
+.block-produce .produce-con {
+  padding: 30rpx;
+}
+
+.block-produce .produce-con .cur {
+  display: block;
+}
+
+.block-produce .produce-con>view {
+  position: relative;
+  display: none;
+}
+
+.block-produce .produce-con .detail-con {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.5;
+}
+
+.block-produce .produce-con .detail-con text {
+  display: inline-block;
+}
+
+.block-produce .produce-con .detail-con image {
+  max-width: 100%;
+}
+
+.block-produce .produce-con .detail-con .spec-item {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  padding: 20rpx 0;
+  font-size: 26rpx;
+}
+
+.block-produce .produce-con .detail-con .spec-item:last-child {
+  border-bottom: 0;
+}
+
+.block-produce .produce-con .detail-con .spec-item .spec-item-l {
+  width: 120rpx;
+  margin-right: 20rpx;
+}
+
+.block-produce .produce-con .detail-con .spec-item .spec-item-r {
+  flex: 1;
+}
+
+.block-produce .produce-con .detail-con .other-item {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  padding: 20rpx 0;
+  font-size: 26rpx;
+}
+
+.block-produce .produce-con .detail-con .other-item:last-child {
+  border-bottom: 0;
+}
+
+.block-produce .produce-con .detail-con .other-item .other-item-l {
+  width: 120rpx;
+  margin-right: 20rpx;
+}
+
+.block-produce .produce-con .detail-con .other-item .other-item-r {
+  flex: 1;
+}
+
+.block-produce .produce-con .detail-con .other-item .other-item-r video {
+  height: 240px;
+}
+
+/*我要咨询*/
+.block-footer-btn {
+  position: fixed;
+  display: flex;
+  width: calc(100% - 60rpx);
+  border-top: 1px solid #eee;
+  left: 0;
+  bottom: 0;
+  height: 70rpx;
+  padding: 30rpx;
+  background-color: #fff;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.block-footer-btn .btn {
+  width: 100%;
+  display: inline-block;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  background-color: #eee;
+  border-radius: 50rpx;
+  font-size: 30rpx;
+  color: #333;
+
+}
+
+.block-footer-btn .btn.on {
+  background: linear-gradient(to right, rgb(255, 118, 0), rgb(255, 145, 17));
+  color: #fff;
+}
+
+/*产品底部*/
+.block-footerOper{
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  z-index: 99;
+  height:96rpx;
+  background-color: #fff;
+  box-shadow: 0px 0px 4px rgba(0,0,0,.1);
+}
+.block-footerOper .footerOper-l{
+  width: 220rpx;
+  display: flex;
+  align-items:center;
+}
+.block-footerOper .footerOper-l .item{
+  width: 50%;
+  height: 100%;
+  border-right: 1px solid #eee;
+  text-align: center;
+}
+.block-footerOper .footerOper-l .item .item-t{
+ margin-top: 14rpx;
+}
+.block-footerOper .footerOper-l .item .item-t text{
+  font-size: 36rpx;
+  color: #666;
+}
+.block-footerOper .footerOper-l .item .item-t.cur text{
+  color: #ff7600;
+}
+.block-footerOper .footerOper-l .item .item-b{
+  font-size: 20rpx;
+  color: #666;
+}
+.block-footerOper .footerOper-m{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.block-footerOper .footerOper-m .price{
+  font-size: 40rpx;
+  color: #ff7600;
+}
+.block-footerOper .footerOper-m .price text{
+  font-size: 24rpx;
+}
+.block-footerOper .footerOper-r{
+   width: 220rpx;
+}
+.block-footerOper .footerOper-r .btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgb(255, 118, 0), rgb(255, 145, 17));
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 0;
+}
